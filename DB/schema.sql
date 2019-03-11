@@ -1,6 +1,7 @@
 create database burgersDB;
 
 use burgersDB;
+DROP TABLE IF EXISTS burgers;
 
 create table burgers(
     id INT NOT NULL AUTO_INCREMENT,

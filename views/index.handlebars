@@ -1,0 +1,53 @@
+<div class="container">
+    <div>
+        <h1 class="text-center">Eat-Da-Burger!</h1>
+    <hr>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Waiting to be Devoured</h5>
+                    <ul class="list-group list-group-flush">
+                        {{#each burger_data}}
+			  	        {{#unless this.devoured}}
+                        {{>burgers/burger-block devoured=false}}				     
+				        {{/unless}}
+			            {{/each}}
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Devoured</h5>
+                    <ul class="list-group list-group-flush">
+                        {{#each burger_data}}
+                        {{#unless this.devoured}}
+                        {{>burgers/burger-block devoured=true}}
+                        {{/unless}}
+                        {{/each}}
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class = "col-sm-12">
+        <div class="card">
+            <div class="card-body">
+                <form class="new-burger">
+                    <div class="form-group">
+                        <label for="name-input">Name</label>
+                        <input class="form-control" id="burger-input" placeholder="Enter a burger you want to eat" type="text">
+                    </div>
+                    <button class="btn btn-primary float-left" id="submit" type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</div>
